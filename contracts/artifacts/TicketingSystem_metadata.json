@@ -9,6 +9,37 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_ticketId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
+					}
+				],
+				"name": "approveResell",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ticketId",
+						"type": "uint256"
+					}
+				],
+				"name": "buyResoldTicket",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_eventId",
 						"type": "uint256"
 					}
@@ -16,6 +47,37 @@
 				"name": "buyTicket",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventId",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "changeTicketPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -102,6 +164,100 @@
 			},
 			{
 				"inputs": [],
+				"name": "getEventCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_eventId",
+						"type": "uint256"
+					}
+				],
+				"name": "getEventDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getOwnerTickets",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTicketCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "nextEventId",
 				"outputs": [
 					{
@@ -154,6 +310,24 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_ticketId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_resellPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "requestResellTicket",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
@@ -173,6 +347,35 @@
 					{
 						"internalType": "bool",
 						"name": "isForSale",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "resalePrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_ticketId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "verifyTicket",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
 						"type": "bool"
 					}
 				],
@@ -208,11 +411,11 @@
 	},
 	"sources": {
 		"contracts/TicketingSystem.sol": {
-			"keccak256": "0xe5ba30070af042a90a80cd1e21c7f9f3a46ac1001f6ce1e6f9badefe8f6db877",
+			"keccak256": "0x18e902a1de54f7d3469879812ab2f9b86432158b650ba1011e43ac94a5bb7b10",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bb4d0755c4bcacafb0f1b7e48195ff18f13c71268034b9b0c2e4a0a70104befd",
-				"dweb:/ipfs/QmeTWvnuvR1YeNf5GYHnU9CS2ZboVtyFyoACnPWw5KPi6s"
+				"bzz-raw://4e58a734858bf7f4e8b9dd1f1c2ad6362a02acbcf0c2b5e2de65f27e9d743fc5",
+				"dweb:/ipfs/Qmf7tzyWZxL7N6bCCNZVsNCvqvXRFCWreGEhHSCMSSpV5G"
 			]
 		}
 	},
